@@ -52,10 +52,12 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
-          use: 'babel-loader',
-          options: {
-            presets: ['@babel/present-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread', '@babael/transform-runtime'],
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
           },
         },
       ],
